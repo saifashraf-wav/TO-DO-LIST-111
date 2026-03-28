@@ -7,7 +7,6 @@
 html {
   font-size: 62.5%;
 }
-/* 99e2b4  #153677 #56ab91 #358f80*/
 .container {
   width: 100%;
   min-height: 100vh;
@@ -19,8 +18,8 @@ html {
   width: 100%;
   max-width: 54rem;
   background: #fff;
-  margin: 10rem auto 2rem;
-  padding: 4rem 3rem 7rem;
+  margin: 5rem auto 2rem;
+  padding: 3rem 2rem 5rem;
   border-radius: 10px;
 }
 
@@ -31,6 +30,8 @@ html {
 
 .toDoList__row {
   display: flex;
+  flex-wrap: wrap; /* important */
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
   background: #edeef0;
@@ -92,7 +93,7 @@ ul li.checked::before {
 
 ul li span {
   position: absolute;
-  right: 0;
+  right: 5px;
   top: 5px;
   width: 40px;
   height: 40px;
@@ -105,4 +106,43 @@ ul li span {
 
 ul li span:hover {
   background: #edeef0;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  .toDoList {
+    margin: 3rem 1rem;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .toDoList__row {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  ul li {
+    font-size: 1.5rem;
+    padding-left: 4rem;
+  }
+
+  ul li span {
+    width: 30px;
+    height: 30px;
+    font-size: 1.8rem;
+  }
 }
